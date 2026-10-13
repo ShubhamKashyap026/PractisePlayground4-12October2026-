@@ -80,3 +80,43 @@ func phythagorusTheorem(inputInt1: Double, inputInt2: Double) -> Double {
 }
 
 print(phythagorusTheorem(inputInt1: 3, inputInt2: 4))
+
+
+// Multiple Values return // Tuples ()
+
+func isUppercased(str: String) -> Bool {
+    return str == str.uppercased()
+}
+
+func getUserWithArray() -> [String] {
+    return ["Taylor", "Swift"]
+}
+
+let user1 = getUserWithArray()
+print("\(user1[0]) \(user1[1])")
+
+
+func getUserWithDictionary() -> [String:String] {
+    return ["firstName":"Taylor", "lastName":"Swift"]
+}
+
+let user2 = getUserWithDictionary()
+print("First Name is \(user2["firstName", default: ""]) Last Name is \(user2["lastName", default: ""])")
+
+
+func getUserWithTuples() -> (firstName: String, lastName: String) { // Can Call using Titles
+    return (firstName: "Shubham", lastName : "Kashyap")
+}
+
+let user3 = getUserWithTuples()
+print(user3.firstName) // Fixed Options
+
+let (firstName, lastName) = getUserWithTuples() // This is called defining multiple variables at the same time along with destructuring
+print(firstName, lastName)
+
+
+let newTuple = ("A", "B", "C")
+//newTuple.append // No Appending allowed // Fixed Values
+//newTuple.insert
+
+
