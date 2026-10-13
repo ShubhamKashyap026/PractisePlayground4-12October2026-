@@ -119,4 +119,31 @@ let newTuple = ("A", "B", "C")
 //newTuple.append // No Appending allowed // Fixed Values
 //newTuple.insert
 
+func rollDice(sides: Int, count: Int) -> [Int] {
+    var rollOutput = [Int]()
+    
+    for i in 1...count {
+        rollOutput.append(Int.random(in: 1...sides))
+    }
+    
+    return rollOutput
+}
 
+print(rollDice(sides: 6, count: 10))
+
+let lyric = "I see red door and i want it painted black"
+print(lyric.hasPrefix("I see"))
+
+func isUppercased(_ str: String) -> Bool {
+    return str == str.uppercased()
+}
+
+print(isUppercased("John"))
+
+func printTimeTables(for number : Int, upto: Int) {
+    for i in 1...upto {
+        print("\(number) * \(i) is \(number * i)")
+    }
+}
+
+printTimeTables(for: 5, upto: 10)
