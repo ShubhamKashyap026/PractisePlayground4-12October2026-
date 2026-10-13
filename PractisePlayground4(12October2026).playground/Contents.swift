@@ -1,3 +1,82 @@
 import Cocoa
 
-var greeting = "Hello, playground"
+func showWelcome() {
+    print("Welcome to my app")
+    print("By default this prints out a conversation")
+    print("App has great value")
+    print("Ranged Value comes here")
+}
+
+showWelcome() // call site
+
+let number = 139
+
+if number.isMultiple(of: 2) { // function being call here
+    print("Even")
+} else {
+    print("Odd")
+}
+
+let roll = Int.random(in: 1...20)
+
+func printTimeTable(for number: Int, upto limit: Int) { // These are called parameters - inside function
+    for i in 1...limit {
+        print("\(number) times \(i) is \(number * i)")
+    }
+}
+
+printTimeTable(for: 5, upto: 10) // Arguments // Actual Value being passed here // Order matters
+
+// Swift lets us build new functions out of existing functions, which is a technique called function composition
+
+func firstFunction() {
+    print("First Function Output")
+    
+    func secondFunction() {
+        print("Second Function Output")
+    }
+    
+    secondFunction()
+}
+
+firstFunction()
+
+
+func buyCar(price: Int) {
+    switch price {
+    case 0...20_000:
+        print("This seems cheap.")
+    case 20_001...50_000:
+        print("This seems like a reasonable car.")
+    case 50_001...100_000:
+        print("This had better be a good car.")
+    default:
+        print("Nothing to see here")
+    }
+}
+
+
+// Return From Functions ->
+
+print(sqrt(9))
+
+func rollDice() -> Int {
+    return Int.random(in: 1...6)
+}
+
+
+
+let result = rollDice()
+print(result)
+
+func checkString(inputStr1 : String, inputStr2: String) -> Bool {
+    return inputStr1.sorted() == inputStr2.sorted()
+}
+
+print(checkString(inputStr1: "Jhon", inputStr2: "John"))
+
+func phythagorusTheorem(inputInt1: Double, inputInt2: Double) -> Double {
+    return sqrt((inputInt1 * inputInt1) + (inputInt2 * inputInt2))
+}
+
+print(phythagorusTheorem(inputInt1: 3, inputInt2: 4))
